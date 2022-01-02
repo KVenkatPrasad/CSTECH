@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <%--<link data-require="bootstrap@*" data-semver="4.0.0-alpha.2" rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" />
+    <script data-require="bootstrap@*" data-semver="4.0.0-alpha.2" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>--%>
+    <%--<script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>--%>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            border: 1px;
+        }
+
+        .auto-style2 {
+            /*width: 256px;
+            height: 256px;*/
+            width: 256px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table class="auto-style1" border="1">
+                <tr>
+                    <td colspan="5">
+                        <img class="auto-style2" src="Images/Logo.png" /></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <asp:HyperLink ID="lnkHm" runat="server" NavigateUrl="~/DashBoard.aspx">Home</asp:HyperLink></td>
+                    <td>
+                        <asp:HyperLink ID="lnkemp" runat="server" NavigateUrl="~/EmployeeList.aspx">Employee List</asp:HyperLink>
+                    </td>
+                    <td>
+                        <asp:Label ID="lbluser" runat="server" ></asp:Label>
+                    </td>
+                    <td>
+                        <asp:HyperLink ID="lnklogout" runat="server" NavigateUrl="~/Logout.aspx" >Logout</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr style="background-color: yellow;">
+                    <td colspan="5"><asp:Label ID="lblPage" runat="server" ></asp:Label></td>
+                </tr>
+            </table>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
